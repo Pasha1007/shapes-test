@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0e14" />
+    <title>Falling Shapes</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="hud" aria-live="off">
+        <div class="hud__field">
+          <span class="hud__label">Shapes</span>
+          <output class="hud__value" id="shape-count">0</output>
+        </div>
+        <div class="hud__field">
+          <span class="hud__label">Surface area</span>
+          <span class="hud__reading">
+            <output class="hud__value" id="shape-area">0</output>
+            <span class="hud__unit">px²</span>
+          </span>
+        </div>
+        <div class="hud__field">
+          <span class="hud__label">FPS</span>
+          <output class="hud__value" id="fps">0</output>
+        </div>
+      </div>
+
+      <div class="stage-frame">
+        <section class="stage" id="stage" aria-label="Falling shapes canvas"></section>
+      </div>
+
+      <footer class="controls" id="controls">
+        <div class="control" data-control="spawnRate">
+          <div class="control__row">
+            <button type="button" data-direction="-1" aria-label="Fewer shapes per second"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16" /></svg></button>
+            <button type="button" data-direction="1" aria-label="More shapes per second"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" /></svg></button>
+          </div>
+          <span class="control__label">number of shapes per second: <output class="control__value">1</output></span>
+        </div>
+        <div class="control" data-control="gravity">
+          <div class="control__row">
+            <button type="button" data-direction="-1" aria-label="Decrease gravity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16" /></svg></button>
+            <button type="button" data-direction="1" aria-label="Increase gravity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" /></svg></button>
+          </div>
+          <span class="control__label">gravity value: <output class="control__value">0</output></span>
+        </div>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
